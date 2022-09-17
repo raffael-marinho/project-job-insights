@@ -9,23 +9,9 @@ def get_unique_job_types(path):
             jobTypes.append(job["job_type"])
     return jobTypes
 
-
+# jobs.filter((job) => job === "programador")
 def filter_by_job_type(jobs, job_type):
-    """Filters a list of jobs by job_type
-
-    Parameters
-    ----------
-    jobs : list
-        List of jobs to be filtered
-    job_type : str
-        Job type for the list filter
-
-    Returns
-    -------
-    list
-        List of jobs with provided job_type
-    """
-    return []
+    return list(filter(lambda job: job["job_type"] == job_type, jobs))
 
 
 def get_unique_industries(path):

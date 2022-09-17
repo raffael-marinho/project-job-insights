@@ -9,6 +9,7 @@ def get_unique_job_types(path):
             jobTypes.append(job["job_type"])
     return jobTypes
 
+
 # jobs.filter((job) => job === "programador")
 def filter_by_job_type(jobs, job_type):
     return list(filter(lambda job: job["job_type"] == job_type, jobs))
@@ -36,7 +37,6 @@ def get_max_salary(path):
             if salary["max_salary"] != "invalid":
                 salaryTypes.append(int(salary["max_salary"]))
     return max(salaryTypes)
-
 
 
 def get_min_salary(path):

@@ -15,4 +15,4 @@ def read(path):
         docs.append(dictWithReader)
     return docs
 
-print(read("src/jobs.csv"))
+# print(read("src/jobs.csv"))

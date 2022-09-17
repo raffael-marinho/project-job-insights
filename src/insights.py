@@ -1,3 +1,4 @@
+from contextlib import suppress
 from src.jobs import read
 
 
@@ -62,18 +63,9 @@ def matches_salary_range(job, salary):
 
 
 def filter_by_salary_range(jobs, salary):
-    """Filters a list of jobs by salary range
-
-    Parameters
-    ----------
-    jobs : list
-        The jobs to be filtered
-    salary : int
-        The salary to be used as filter
-
-    Returns
-    -------
-    list
-        Jobs whose salary range contains `salary`
-    """
-    return []
+    salaries = []
+    for job in jobs:
+        with suppress(ValueError):
+            if matches_salary_range(job, salary):
+                salaries.append(job)
+    return salaries

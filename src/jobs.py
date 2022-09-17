@@ -5,7 +5,7 @@ import csv
 @lru_cache
 def read(path):
     with open(path, encoding="utf-8") as file:
-        reader = csv.reader(file, delimeter=",")
+        reader = csv.reader(file, delimiter=",")
         header, *data = reader
     docs = []
     for line in data:
@@ -14,3 +14,5 @@ def read(path):
             dictWithReader[header[row]] = line[row]
         docs.append(dictWithReader)
     return docs
+
+print(read("src/jobs.csv"))
